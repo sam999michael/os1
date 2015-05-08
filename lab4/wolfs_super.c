@@ -117,7 +117,11 @@ static int wolfs_create(struct inode *dir, struct dentry *dentry, umode_t mode,
 }
 
 /*
- * Get inode using directory and name
+ * Get link input dentry to a child of inode dir using name.
+ *
+ * Return the dentry (or NULL) returned by d_splice_alias(), which adds
+ * a dentry to the dcache and creates an in-memory link (alias) for the
+ * inode.
  */
 static struct dentry *wolfs_lookup(struct inode *dir, struct dentry *dentry,
 	unsigned int flags)
