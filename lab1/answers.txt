@@ -1,2 +1,15 @@
 Place the answers to required questions in this text file.
+Exercise 4
+1) What is happening at line 499
+	cmpl $(NR_syscalls), %eax
 
+	The syscall number stored in eax register is compared with the maximum valid syscall number in the system. If the number in eax is equal to or greater than NR_syscalls, it is a bad system call.
+
+2) In your write-up, identify the six registers closest to esp and which system call argument they store.
+
+	ebx: arg1
+	ecx: arg2
+	edx: arg3
+	esi: arg4
+	edi: arg5
+	ebp: arg6
